@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import { Row, Col, Spinner, Alert } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 class CustomGallery extends Component {
 
@@ -65,7 +66,9 @@ class CustomGallery extends Component {
 
                     {this.state.films.Search.map((film) => (
                         <Col className="mb-2 text-center px-1" key={film.imbdID}>
+                         <Link to={`/movie-details/${film.imbdID}`}>
                             <img className="img-fluid" src={film.Poster} alt="cover" />
+                         </Link>
                             <p className='text-light'> {film.Title}</p>
                         </Col>
                     ))}

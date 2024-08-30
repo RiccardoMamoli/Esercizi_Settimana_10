@@ -1,4 +1,5 @@
 import { Navbar, Nav, Container, Dropdown } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 
 function CustomNavBar() {
@@ -7,17 +8,19 @@ function CustomNavBar() {
 
             <Navbar variant="dark" expand="lg" style={{ backgroundColor: '#221f1f' }}>
                 <Container fluid>
-                    <Navbar.Brand href="#void">
-                        <img src="/logo_netflix.png" alt="cover" style={{ width: "100px", height: "55px" }} />
+                    <Navbar.Brand>
+                        <Link to='/'>
+                            <img src="/logo_netflix.png" alt="cover" style={{ width: "100px", height: "55px" }} />
+                        </Link>
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarSupportedContent" />
                     <Navbar.Collapse id="navbarSupportedContent">
                         <Nav className="me-auto mb-2 mb-lg-0">
-                            <Nav.Link href="#void" className="fw-bold" active>Home</Nav.Link>
-                            <Nav.Link href="#void" className="fw-bold">TV Shows</Nav.Link>
-                            <Nav.Link href="#void" className="fw-bold">Movies</Nav.Link>
-                            <Nav.Link href="#void" className="fw-bold">Recently Added</Nav.Link>
-                            <Nav.Link href="#void" className="fw-bold">My List</Nav.Link>
+                            <Link to='/' className="fw-bold nav-link" active>Home</Link>
+                            <Link to='/tvshows' className="fw-bold nav-link">TV Shows</Link>
+                            <Link className="fw-bold nav-link">Movies</Link>
+                            <Link className="fw-bold nav-link">Recently Added</Link>
+                            <Link className="fw-bold nav-link">My List</Link>
                         </Nav>
                         <div className="d-flex align-items-center">
                             <i className="bi bi-search icons"></i>
